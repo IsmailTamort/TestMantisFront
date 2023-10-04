@@ -1,0 +1,32 @@
+<div class="container">
+  <table class="table table-bordered">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th rowspan="2" id="noBorder"></th>
+          <th rowspan="2">Total anomalies</th>
+          <th colspan="2">Bugs </th>
+          <th colspan="2">Améliorations</th>
+        </tr>
+        <tr>
+          <th class="ongoingBugs">En cours</th>
+          <th class="resolved">Résolu</th>
+          <th class="ongoingImprovements">En cours</th>
+          <th class="resolved">Résolu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let anomaly of anomalies">
+          <tr>
+            <td>{{ anomaly.name }}</td>
+            <td>{{ anomaly.total }}</td>
+            <td class="ongoingBugs">{{ anomaly.bugs.ongoing }}</td>
+            <td class="resolved">{{ anomaly.bugs.resolved }}</td>
+            <td class="ongoingImprovements">{{ anomaly.improvements.ongoing }}</td>
+            <td class="resolved">{{ anomaly.improvements.resolved }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </table>
+</div>
